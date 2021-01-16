@@ -17,7 +17,7 @@ void towerOfHanoi(int n, vector<int>& from_rod, vector<int>& to_rod, vector<int>
     if (n > 0){
     
     // Move n - 1 disks from source to auxiliary, so they are out of the way
-    towerOfHanoi(n - 1, from_rod, aux_rod ); 
+    towerOfHanoi(n - 1, from_rod, aux_rod,to_rod ); 
 
     to_rod.push_back(from_rod.back());
     from_rod.pop_back();
@@ -32,7 +32,7 @@ void towerOfHanoi(int n, vector<int>& from_rod, vector<int>& to_rod, vector<int>
     cout << endl;
     
     // Move the n - 1 disks that we left on auxiliary onto target
-    towerOfHanoi(n - 1, aux_rod, to_rod, from_rod, aux, target, start);
+    towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
 
 
              }
